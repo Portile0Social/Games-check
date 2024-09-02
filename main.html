@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertex Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Vertex</h1>
+            <input type="text" id="search-bar" placeholder="Search...">
+            <button id="changelog-btn">Changelog</button>
+        </header>
+        <nav>
+            <div class="filter-btn-group">
+                <button class="filter-btn" data-filter="All">All</button>
+                <button class="filter-btn" data-filter="Apps">Apps</button>
+                <button class="filter-btn" data-filter="Games">Games</button>
+            </div>
+        </nav>
+        <section id="results"></section>
+        <div id="pagination"></div>
+        <div id="context-menu"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
