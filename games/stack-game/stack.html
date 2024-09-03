@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-us" class="no-js" amp="" style="--width:800px; --height:600px;">
+    <head>
+        <style>
+            html, body {
+                overflow: hidden;
+                padding: 0;
+                margin: 0;
+            }
+            iframe {
+                border: none;
+                width: 100vw;
+                height: 100vh;
+            }
+        </style>
+        <base href="/">
+        <title>Stack | Ustym Ukhman</title>
+        <meta charset="utf-8">
+        <meta name="fragment" content="!">
+        <meta property="og:url" content="http://35.158.218.205/experiments/Stack">
+        <meta http-equiv="cleartype" content="on">
+        <meta name="author" content="Ustym Ukhman">
+        <meta name="theme-color" content="#00CC00">
+        <meta name="MobileOptimized" content="320">
+        <meta property="og:type" content="website">
+        <meta name="HandheldFriendly" content="True">
+        <meta property="og:title" content="Stack | Ustym Ukhman">
+        <meta name="twitter:title" content="Stack | Ustym Ukhman">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="msapplication-TileColor" content="#00CC00">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="/public/images/Stack.jpg">
+        <meta name="twitter:image" content="/public/images/Stack.jpg">
+        <meta name="apple-mobile-web-app-title" content="Ustym Ukhman">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#00CC00">
+        <meta name="keywords" content="Ustym,Ukhman,Ustym Ukhman,front-end,web,developer">
+        <meta name="msapplication-TileImage" content="/public/favicon/ms-icon-144x144.png">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+        <meta name="description" content="Stack game clone">
+        <meta property="og:description" content="Stack game clone">
+        <meta name="twitter:description" content="Stack game clone">
+        <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAeBQTFRFAAAARERAICAdmZqdw8XJy87TzM7Tzc/Tzc/UzdDUztDUy83SwsTIl5mcjpCUtLe+srW8jI+ThYiMn6KonJ+mg4WKgoSImZyilJeef4GGfH+DkZSbjI+VenyBd3p+iYySg4eNdHZ7cnR5gIOJe3+FbnF2bG90eHuBc3d9aWtwc3Z8bnJ4ZWhtZGdsbXB2am1zYmRpXF9jcXR7b3J5W11iNzg6TU9TU1ZaVVdbVlhcV1ldWFleWFpeU1VZJiYjAQEBAAAAJiYkR0dDW1tWZmZgZWVflZedjY+UjpCVj5GWkJKXkZOXkJKWj5GVjpCUjI6TlJabSUtMRk1ARElBREhCRUlDRUpDRElCQ0dBQkZAPkI9R0lKR0lIV2tEWm9GSVFCSFBCSVFDRk5AQ0w9PUQ4PkBAQUNDQ007ZIFGSlg+P0c6PkY4O0M1Nz8xMzstLzcpKTAkLjAwNjc3SF01SV80TmY1Um42OEcqKC8iKDAiKDAhJSwgKiwsJykpKjQgKDEgM0IlN0cmLDciJS0fJi4fIyodJigoJCUlICcaIyscIiocIikcIyocIyQkISIhHiUYISkaICEhHh8fFBgRFhsTFhoTHR4eWVtgU1VZVFZbVVdbVlhcV1hdVFZaU1RZWFpfPRqEzAAAAEZ0Uk5TAAMBF3CDgoKCgoKDcBdE7+9ESfHxSUnx8UlJ8fFJSfHxSUnx8UlJ8fFJ8fFJSfHxSUjx8Ugoori3t7e3t7gFDxMFAwMCAjwYtDQAAABtSURBVBjTVY9BDsIwEAM9WUeolO8gvs+3OBRzCIHUN49krxd0VkEW20QxpHeiDt55DADAE5t9AV5A2gRX/jI2t+nS1gjSOXJISjcuLiDJktIKG8PYn5Sx6d+zKTDc5/Qk6a94Y/13a/41jJZ8AJuRGJhqiE5IAAAAAElFTkSuQmCC">
+        <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAABQ9JREFUWMPFV02LHFUUPbe6p6e7Z+KkM4hEY1BUAiLki8TsHHQIkZB/oDvXEgRx4VoXgkK2rgT/RAIacSdiCMRkTCKiIwbjZNLT6c/qfu/e4+K9qq7qnogLcarp7lfvVdU9995zz7sl6+trCQDB3hysRuN7BQAJ9vioZoOtrS3euLHB/8PoyZNHpdVqCQBURQTb2w/41tvvtFZWVlY4kw8RgDOwwly8UgAQEJE498/3AsD2w+3Ol1983nn28OFg69PPLr1y6vSZS4v1+osAOEsIySdyayWQzH+mg7JhFs8lHad3r/3w/cX3Lr67USWJjz7+5NWJ82uESwhO784MCSCZt4jjMpkLQIKxfFyYk/gw5/2hNJ2cJnmrKiLy/gcfNtPxWEajFN9+8xUedR8hkSQYzkFIxCRTEDJ1v2yc+Th4T5gZnljZj9fW3oCISK/XrYuIVAEIzUAjev0erl+/huFwgCRJICJIEsmR5wBkPgokwSzUhTFJ0AymhsbSEk6cPI3l5X0wNcmqgCTFq0JVAQCViqD1dA0LjQSDtiEGY04uMjC5URbzHTwnCdMEw64DAKh6qHpYTHMCAEaDRQBmBjNi6ckKnj9Tx/5nqjHE4QOZfimMObC4Fv9hIKx0rcUoeO/hvIeZTXXAjPTeQ30EQMXDzTFqTcGh41VIxdDedMgYWchIXmqMzCOyEiWMBu8U4/EEnc4Ay0sGF+2QUwBiFpB572FqUDU453FvYwhIA4eOL8BoePiby0syCz8I0IKHqho8dA7GeO48vFf0+ymqlRq883DeQQsRoFlA5pyDmkJNYZYgIVCth4e71MNU83CqWcyn5qHNUpiVnBT4gciHoqN5CkiTgDQYMe9BVHDw5TrqBwy3rnbQ2/aoVBENKyYjh/HQx5Kb6lBGU8pUHc0Ii6WYOTrLAXgNAPqDAbrdHaweOYDF1QVcv7yF7oMJjp5bxVMvNIJ3CfDHzQFuXm2DhpIEFwUxk2yzUIo0g3cO3s2RUJlFYDweIx2n+OvXLnbuD9BvOySJ4OfvOvj9x15uaNSLKUGBhLMlmmuBhUpjxrVyBMTU4NwEzrmAlMSo55D2PUQAJbDz56hsRARJ7CS46x5KkGExRCCkIOdAkYRqhomb5iYTEAgBZprHcpKjdxIRcHYbLe6QDCVpZnDOYTLLAZJipjBTGA1kEBSBRLGJ5qWQaMm2TWK3ABTXiFCqJOFVc72ZNiRkXv+599kOBoAiOdtLHhbXSgwsr+WSbAZGJ7OLqwCgZvTe5bmxmK9sxxPMNxtFsu26VrjPjCGqJFQV6j3MpgAkQ2dmwXMzqDdIIrt3NpyX4lJ0ZtZMp0TUaCcDXVJC7z3UDJOJR+fBEHMbIOe93HV+l3VVg1nIv9d5Doipolar4eixE+jstPPGo9yWyfzzC+Epd2FlcpJEq7WK2uIiGI2XOKCqgAiOHT8FSZLwshAFPeuKis1IGRALYlRoRDLyZWNjtl/QIgmqAOTO7Y3N6kJtc3l530ERMHgfjBSJKNMGsRAFKbdkMRTFtqzULYHS63bv3f7p1iYAkQsXzlWuXPn6YKOx9OZivf6cBPl5/KuS7DbBx/NknkJMR6Nf0nR0+fz5s/fl7NnXK+32TnLnzt3GaJTWQqRlLoePfz/4N3Ol57HZbI6PHHkpbbX2m6yvr1WSJJFms8lGYxEkIZLMNJz2H84Rw+FIRqMUZsa4Gxr6/b70+/09eTck9u7g32M4cA05TcJXAAAAAElFTkSuQmCC">
+        <link rel="icon" type="image/png" sizes="96x96" href="/public/favicon/xfavicon-96x96.png.pagespeed.ic.7DOzI3xDU4.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/public/favicon/xandroid-icon-192x192.png.pagespeed.ic.wCDwh0s6uP.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/public/favicon/xandroid-icon-512x512.png.pagespeed.ic.q8Lq4e2yeI.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="/public/favicon/xapple-icon-57x57.png.pagespeed.ic.Pes3j9f8Gb.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="/public/favicon/xapple-icon-60x60.png.pagespeed.ic.5P0tCitA80.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="/public/favicon/xapple-icon-72x72.png.pagespeed.ic.R-2mhWB3HH.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="/public/favicon/xapple-icon-76x76.png.pagespeed.ic.y8HYouoMxV.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="/public/favicon/xapple-icon-114x114.png.pagespeed.ic.P2462fu9By.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="/public/favicon/xapple-icon-120x120.png.pagespeed.ic.8XVmrQFd9B.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="/public/favicon/xapple-icon-144x144.png.pagespeed.ic.ejV6Kb6Mwn.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="/public/favicon/xapple-icon-152x152.png.pagespeed.ic.OyotR221TM.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/public/favicon/xapple-icon-180x180.png.pagespeed.ic.SpVMLrY3h4.png">
+        <link rel="manifest" href="/manifest.json">
+        <style as="style" onload="this.rel = 'stylesheet'">
+            @font-face {
+                font-display: swap;
+                font-family: Martix Code NFI;
+                font-style: normal;
+                font-weight: 400;
+                src: url(public/fonts/matrix-code/Matrix-Code-NFI.otf) format("opentype"),url(public/fonts/matrix-code/Matrix-Code-NFI.ttf) format("truetype");
+                unicode-range: U+00??,U+0131,U+0152-0153,U+02bb-02bc,U+02c6,U+02da,U+02dc,U+2000-206f,U+2074,U+20ac,U+2122,U+2191,U+2193,U+2212,U+2215,U+feff,U+fffd
+            }
+
+            @font-face {
+                font-display: swap;
+                font-family: White Rabbit;
+                font-style: normal;
+                font-weight: 400;
+                src: url(public/fonts/white-rabbit/White-Rabbit.svg#WhiteRabbit) format("svg"),url(public/fonts/white-rabbit/White-Rabbit.ttf) format("truetype"),url(public/fonts/white-rabbit/White-Rabbit.woff) format("woff"),url(public/fonts/white-rabbit/White-Rabbit.eot) format("eot");
+                unicode-range: U+00??,U+0131,U+0152-0153,U+02bb-02bc,U+02c6,U+02da,U+02dc,U+2000-206f,U+2074,U+20ac,U+2122,U+2191,U+2193,U+2212,U+2215,U+feff,U+fffd
+            }
+        </style>
+        <link type="text/css" rel="stylesheet" href="games/stack-game/public/css/initial.css"/>
+        <script src="/public/js/experiments-page.447fe862b9aecf31dd2f.js+experiment-page.84ac49e7c7af4d723f0e.js.pagespeed.jc.F5SQ5xrgQC.js"></script>
+        <script>
+            eval(mod_pagespeed_RdhYB5HdnY);
+        </script>
+        <script>
+            eval(mod_pagespeed_a6INOe2PEJ);
+        </script>
+    </head>
+    <body>
+        <noscript>
+            <div class=disabled-js>
+                <div class=disabled-js-copy>
+                    <strong>Oops.., it seems you've disabled JavaScript on this browser</strong>
+                    <span>
+                        Please make sure to enable it<br>and reload the page to visit this website.
+                    </span>
+                </div>
+            </div>
+        </noscript>
+        <div data-version="2.6.8" data-deploy="true" id="root" data-v-app="">
+            <main id="app">
+                <!--v-if-->
+                <div class="background-container" data-v-f211a6fc="">
+                    <div class="background" data-v-f211a6fc="" style="width: 552px;">
+                        <div data-v-f211a6fc=""></div>
+                        <div data-v-f211a6fc=""></div>
+                    </div>
+                </div>
+                <article itemtype="https://schema.org/mainEntity" class="experiments-page page" itemscope="" itemprop="mainEntity" data-v-40923260="">
+                    <article itemtype="http://schema.org/CreativeWork" class="experiment-page page" itemscope="" data-v-d12013fc="" data-v-40923260="">
+                        <iframe itemtype="https://schema.org/mainEntity" itemprop="mainEntity" title="Stack" name="Stack" abstract="Stack game clone" author="Ustym Ukhman" maintainer="Ustym Ukhman" src="https://ustymukhman.github.io/Stack/Build/" url="https://github.com/UstymUkhman/Stack" allowfullscreen="" data-v-d12013fc=""></iframe>
+                        <div class="share-buttons" data-v-434c8576="" data-v-d12013fc="">
+                            <div itemtype="http://schema.org/ShareAction" data-v-434c8576="">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.91 22.93">
+                                    <path d="M21.78,31.47V21h3.51l.53-4.08h-4v-2.6c0-1.18.33-2,2-2H26V8.69a28.89,28.89,0,0,0-3.15-.16c-3.11,0-5.24,1.9-5.24,5.39v3H14V21h3.52V31.47Z" transform="translate(-14.05 -8.53)"></path>
+                                </svg>
+                            </div>
+                            <div itemtype="http://schema.org/ShareAction" data-v-434c8576="">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.47 19.89">
+                                    <path d="M15.46,29.94A14.19,14.19,0,0,0,29.75,15.66c0-.22,0-.43,0-.65a10.22,10.22,0,0,0,2.5-2.6,10,10,0,0,1-2.88.79,5,5,0,0,0,2.21-2.78,10.06,10.06,0,0,1-3.19,1.22,5,5,0,0,0-8.56,4.58A14.25,14.25,0,0,1,9.47,11,5,5,0,0,0,11,17.68,5,5,0,0,1,8.75,17s0,0,0,.06a5,5,0,0,0,4,4.92,5,5,0,0,1-2.27.09,5,5,0,0,0,4.69,3.49A10.08,10.08,0,0,1,9,27.76a10.22,10.22,0,0,1-1.2-.07,14.21,14.21,0,0,0,7.7,2.26" transform="translate(-7.76 -10.06)"></path>
+                                </svg>
+                            </div>
+                            <a href="https://github.com/UstymUkhman/Stack" target="_blank" rel="noopener" itemtype="http://schema.org/LinkRole" data-v-434c8576="">
+                                <svg version="1.1" viewBox="0 0 438.55 438.55" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m409.13 114.57c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.06-29.408-39.781 0-76.472 9.804-110.06 29.408-33.596 19.605-60.192 46.204-79.8 79.8-19.605 33.595-29.408 70.281-29.408 110.06 0 47.78 13.94 90.745 41.827 128.91 27.884 38.164 63.906 64.572 108.06 79.227 5.14 0.954 8.945 0.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-0.571-0.049-5.708-0.144-15.417-0.098-9.709-0.144-18.179-0.144-25.406l-6.567 1.136c-4.187 0.767-9.469 1.092-15.846 1-6.374-0.089-12.991-0.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-0.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-0.572-1.335-0.098-2.43 1.427-3.289s4.281-1.276 8.28-1.276l5.708 0.853c3.807 0.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136s11.704-0.476 16.274-1.423c4.565-0.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-0.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.07-79.226 27.88-38.161 41.825-81.126 41.825-128.91-0.01-39.771-9.818-76.454-29.414-110.05z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </article>
+                <!--v-if-->
+            </main>
+        </div>
+        <script type="text/javascript">
+            //<![CDATA[
+            "use strict";
+            (window.navigator.userAgent.match(/Trident\//i) || window.navigator.userAgent.match(/MSIE /i)) && (document.documentElement.className += " ms-ie",
+            document.execCommand("Stop"));
+            //]]>
+        </script>
+        <script src="/public/js/runtime,7Eapp.0d2b48e23f84aeae44f6.js.pagespeed.ce.XmvfZwQo7r.js"></script>
+        <script src="/public/js/vendors.37446427a41cb9225c68.js.pagespeed.jm.IT6305U14g.js"></script>
+        <script src="/public/js/app.05c53d4b564292eaea13.js.pagespeed.ce.TpLa7X1Wku.js"></script>
+    </body>
+</html>

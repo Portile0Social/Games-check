@@ -9,9 +9,16 @@
     {
         "title": "Eaglercraftʎ",
         "icon": "icons/minecraft.svg",
-        "url": "/eaglercraftl.html",
+        "url": "games/eaglercraftl.html",
         "category": "Games",
         "description": "Minecraft 1.9.4 ported to the web!"
+    },
+    {
+        "title": "Discord",
+        "icon": "icons/discord.png",
+        "url": "apps/discord.html",
+        "category": "Apps",
+        "description": "The official Vertex discord server!"
     },
     {
         "title": "Eaglercraft",
@@ -61,5 +68,12 @@
         "url": "games/eaglercraftindev.html",
         "category": "Games",
         "description": "Minecraft indev ported to the web!"
+    },
+    {
+        "title": "Stack",
+        "icon": "icons/stack.png",
+        "url": "games/stack-game/stack.html",
+        "category": "Games",
+        "description": "Test your reaction skills!"
     }
 ]

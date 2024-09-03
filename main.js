@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(event) {
         if (event.altKey && event.code === 'Backquote') {
@@ -7,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
 
 document.addEventListener('DOMContentLoaded', function() {
     let currentPage = 1;
@@ -20,10 +18,21 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch('data.json')
             .then(response => response.json())
             .then(data => {
-                const filteredData = data.filter(item =>
-                    (currentFilter === 'All' || item.category === currentFilter) &&
-                    item.title.toLowerCase().includes(query)
-                );
+                const filteredData = data.filter(item => {
+                    let categoryMatches = false;
+
+                    // Swap logic for Apps and Games
+                    if (currentFilter === 'Apps') {
+                        categoryMatches = item.category === 'Apps';
+                    } else if (currentFilter === 'Games') {
+                        categoryMatches = item.category === 'Games';
+                    } else {
+                        categoryMatches = currentFilter === 'All' || item.category === currentFilter;
+                    }
+
+                    return categoryMatches && 
+                        (item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query));
+                });
                 displayResults(filteredData);
             });
     }
@@ -61,7 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const btn = document.createElement('button');
             btn.textContent = i;
             if (i === currentPage) {
-                btn.style.backgroundColor = '#2F6E5F';
+                btn.style.backgroundColor = '#4f6d66';
+                btn.style.scale = '0.95';
             }
             btn.addEventListener('click', function() {
                 currentPage = i;
@@ -78,13 +88,13 @@ document.addEventListener('DOMContentLoaded', function() {
             contextMenu.style.display = 'none';
             isChangelogOpen = false;
         } else {
-            fetch('.changelog')
+            fetch('changelog')
                 .then(response => response.text())
                 .then(data => {
                     contextMenu.innerHTML = parseChangelog(data);
                     contextMenu.style.display = 'block';
-                    contextMenu.style.left = `${event.clientX}px`;
-                    contextMenu.style.top = `${event.clientY}px`;
+                    contextMenu.style.left = `75vw`;
+                    contextMenu.style.top = `24px`;
                     isChangelogOpen = true;
                 });
 
@@ -108,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }).join('');
         }).join('<hr style="border: none; margin: 10px 0;">');
     }
-
 
     document.querySelectorAll('.filter-btn').forEach(button => {
         button.addEventListener('click', function() {
