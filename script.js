@@ -2,12 +2,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(event) {
         if (event.code === 'Backquote') {
-            let password = prompt('Enter authentication key:');
-            if (password === 'correct-password') {
-                localStorage.setItem("auth", "correct-password");
-                window.location.href = 'main.html';
+            event.preventDefault()
+            if (localStorage.getItem('vertex_autologin_setting') !== 'true') {
+              window.location.href = 'login.html'
             } else {
-                alert('Incorrect password!');
+              window.location.href = 'main.html'
             }
         }
     });
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
 
 
 
